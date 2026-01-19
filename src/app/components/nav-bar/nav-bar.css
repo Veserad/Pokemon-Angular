@@ -3,6 +3,7 @@
 }
 .subtitles {
   color: white;
+  font-weight: bold;
 }
 button {
   color: white;
@@ -23,21 +24,21 @@ button:hover {
 input {
   background-color: transparent;
   border-radius: 50px;
-  border: 1px solid white;
+  border: 1px solid rgb(74 73 33 / var(--tw-text-opacity, 1));
   color: white;
   padding: 5px 10px;
   background-color: rgb(46 45 20 / var(--tw-bg-opacity, 1));
   opacity: 1;
-  width: 100%;
+  /* width: 100%; */
   padding-left: 40px; /* espacio para el icono */
   /* color: red; */
 }
+
 .navBar {
-  max-width: 60%;
-  /* background-color: red; */
   display: flex;
-  justify-content: space-around;
-  padding-left: 20%;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-bottom: 10px;
 }
 .navBar1 {
   display: flex;
@@ -48,7 +49,8 @@ input:focus {
   outline: red;
 }
 input::placeholder {
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  /* color: rgb(255 255 255 / var(--tw-text-opacity, 1)); */
+  color: rgb(204 203 142 / var(--tw-text-opacity, 1));
 }
 
 .input-icon {
