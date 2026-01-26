@@ -44,6 +44,10 @@ h1 span {
 }
 .open-pokedex {
   background-color: yellow;
+  transition: 0.5s;
+}
+.open-pokedex:hover {
+  background-color: rgb(199, 199, 30);
 }
 .pokedex-buttons {
   display: flex;
@@ -63,6 +67,10 @@ h1 span {
   color: white;
   margin-left: 30px;
   border: none;
+  transition: 0.5s;
+}
+.view-api:hover {
+  background-color: #5e5c2a;
 }
 .hero-image {
   position: relative;
@@ -90,3 +98,40 @@ h1 span {
   filter: blur(15px);
   z-index: -1;
 } */
+
+/* inicio del acceso rapido*/
+
+.acceso-rapido {
+  color: white;
+}
+.acceso-divs {
+  display: flex;
+}
+.acceso-spans {
+  color: rgb(204 203 142 / var(--tw-text-opacity, 1));
+}
+.acceso-tarjeta {
+  background-color: rgb(74 73 33 / 0.5);
+  border-radius: 30px;
+  padding: 20px;
+  margin-right: 10px;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.acceso-tarjeta:hover {
+  transform: scale(1.05);
+  border: 1px solid yellow;
+}
+.acceso-tarjeta:hover .iconos-tarjeta {
+  color: black;
+}
+.acceso-tarjeta:hover .caja-tarjeta {
+  background-color: yellow;
+}
+.caja-tarjeta {
+  border-radius: 50px;
+  display: inline-block;
+  background-color: rgb(74 73 33 / 2);
+  padding: 5px;
+}
