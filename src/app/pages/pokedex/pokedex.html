@@ -1,5 +1,15 @@
-<div *ngFor="let pokemon of pokemones | async">
-  <h2>{{ pokemon.name }}</h2>
-  <p>{{ pokemon.url }}</p>
-</div>
-<p>asd</p>
+<ng-container *ngIf="pokemones | async as listaPokemon">
+  <h1>
+    Results <span>({{ listaPokemon.length - 1 }} Pokémon)</span>
+  </h1>
+  <div class="tarjetas-container">
+    <div *ngFor="let pokemon of listaPokemon" class="tarjeta">
+      <button>
+        <img [src]="getImageUrl(pokemon.url)" alt="" width="200px" />
+        <h2>
+          {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}
+        </h2>
+      </button>
+    </div>
+  </div>
+</ng-container>

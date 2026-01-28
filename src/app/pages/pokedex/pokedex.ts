@@ -1,5 +1,7 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Servicios } from '../../servicios/servicios';
+import { Pokemon, PokemonByName } from '../../pokemon';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pokedex',
@@ -8,26 +10,18 @@ import { Servicios } from '../../servicios/servicios';
   styleUrl: './pokedex.css',
 })
 export class Pokedex {
-  pokemones!: any;
+  pokemones: Observable<Pokemon[]>;
+  pokemonSearch: Observable<PokemonByName>;
   loading = true;
-  constructor(
-    private api: Servicios,
-    private cdr: ChangeDetectorRef,
-  ) {
-    // this.init;
+  constructor(private api: Servicios) {
     this.pokemones = this.api.getAllPokemons();
+    this.pokemonSearch = this.api.getPokemonByName('pikachu');
   }
-
-  // async init() {
-  //   try {
-  //     this.pokemones = await this.api.getAllPokemons();
-  //     console.log('Pokemones cargados:', this.pokemones);
-  //     this.loading = false;
-  //   } catch (error) {
-  //     console.log('Error al cargar los pokemones:', error);
-  //   } finally {
-  //     this.loading = false;
-  //     this.cdr.detectChanges();
-  //   }
-  // }
+  log(pokemonSearch: PokemonByName) {
+    console.log(pokemonSearch);
+  }
+  getImageUrl(url: string): string {
+    const id = url.split('/').filter(Boolean).pop();
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+  }
 }
