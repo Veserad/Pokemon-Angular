@@ -1,5 +1,5 @@
 export interface Pokemon {
-  name: String;
+  name: string;
   url: string;
 }
 export interface PokemonResponse {
@@ -11,7 +11,31 @@ export interface PokemonByName {
   forms: Array<any>;
   moves: Array<any>;
   name: string;
+  id: number;
   order: number;
   species: object;
-  sprites: object;
+  sprites: PokemonSprites;
+  types: Array<PokemonType>;
+  height: number;
+  weight: number;
+}
+export interface PokemonType {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+}
+export interface PokemonSpritesOthers {
+  'official-artwork': {
+    front_default: string;
+  };
+}
+export interface PokemonSprites {
+  front_default: string;
+  other: {
+    'official-artwork': {
+      front_default: string;
+    };
+  };
 }

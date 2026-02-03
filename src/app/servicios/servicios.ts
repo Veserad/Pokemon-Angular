@@ -10,7 +10,7 @@ export class Servicios {
   constructor(private http: HttpClient) {}
   getAllPokemons(): Observable<Pokemon[]> {
     return this.http
-      .get<PokemonResponse>('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
+      .get<PokemonResponse>('https://pokeapi.co/api/v2/pokemon?limit=12&offset=0')
       .pipe(map((response: any) => response.results));
   }
 

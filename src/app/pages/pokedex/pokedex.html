@@ -4,11 +4,12 @@
   </h1>
   <div class="tarjetas-container">
     <div *ngFor="let pokemon of listaPokemon" class="tarjeta">
-      <button>
+      <button (click)="abrirDetalle(pokemon.name)">
         <img [src]="getImageUrl(pokemon.url)" alt="" width="200px" />
         <h2>
           {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}
         </h2>
+        <h3></h3>
       </button>
     </div>
   </div>

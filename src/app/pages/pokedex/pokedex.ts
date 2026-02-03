@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Servicios } from '../../servicios/servicios';
 import { Pokemon, PokemonByName } from '../../pokemon';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { Pokemon as DetallePokemon } from '../pokemon/pokemon';
 
 @Component({
   selector: 'app-pokedex',
@@ -13,7 +15,10 @@ export class Pokedex {
   pokemones: Observable<Pokemon[]>;
   pokemonSearch: Observable<PokemonByName>;
   loading = true;
-  constructor(private api: Servicios) {
+  constructor(
+    private api: Servicios,
+    private dialog: MatDialog,
+  ) {
     this.pokemones = this.api.getAllPokemons();
     this.pokemonSearch = this.api.getPokemonByName('pikachu');
   }
@@ -23,5 +28,12 @@ export class Pokedex {
   getImageUrl(url: string): string {
     const id = url.split('/').filter(Boolean).pop();
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+  }
+  abrirDetalle(nombre: string) {
+    this.dialog.open(DetallePokemon, {
+      width: '600px',
+      height: '600px',
+      data: nombre,
+    });
   }
 }
