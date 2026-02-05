@@ -1,16 +1,15 @@
-<div *ngIf="loading">Cargando...</div>
+<div class="body">
+  <div *ngIf="loading">Cargando...</div>
+  <div *ngIf="!loading" class="pokemon-card">
+    <h2>{{ pokemon.name | titlecase }}</h2>
 
-<div *ngIf="!loading">
-  <h2>{{ pokemon.name | titlecase }}</h2>
+    <img [src]="pokemon.sprites.other['official-artwork'].front_default" width="250" />
 
-  <img [src]="pokemon.sprites.other['official-artwork'].front_default" width="250" />
+    <p><b>Altura:</b> {{ pokemon.height }}</p>
+    <p><b>Peso:</b> {{ pokemon.weight }}</p>
 
-  <p><b>Altura:</b> {{ pokemon.height }}</p>
-  <p><b>Peso:</b> {{ pokemon.weight }}</p>
-
-  <div>
-    <span *ngFor="let t of pokemon.types">
-      {{ t.type.name }}
-    </span>
+    <div>
+      <span *ngFor="let t of pokemon.types"> <b>Type:</b> {{ t.type.name }} </span>
+    </div>
   </div>
 </div>

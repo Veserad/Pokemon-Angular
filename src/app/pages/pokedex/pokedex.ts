@@ -32,8 +32,9 @@ export class Pokedex {
   abrirDetalle(nombre: string) {
     this.dialog.open(DetallePokemon, {
       width: '600px',
-      height: '600px',
+      maxHeight: '600px',
       data: nombre,
+      panelClass:'cuadro-pokemon'
     });
   }
 }

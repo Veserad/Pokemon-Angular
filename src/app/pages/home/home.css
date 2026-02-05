@@ -6,16 +6,22 @@
     'opsz' 24;
 }
 .pkdatabase {
-  color: yellow;
+  color: yellow !important;
   border-radius: 50px;
   /* background-color: blue; */
   background-color: rgb(74 73 33 / 0.5);
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   display: inline-block;
+  margin-bottom: 20px;
 }
 .bolt {
   color: yellow;
+}
+.bolt-div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 h1 {
   font-size: 50px;
@@ -24,6 +30,8 @@ h1 {
 }
 h1 span {
   color: yellow;
+  /* margin: auto; */
+  line-height: 1.8;
 }
 .box {
   /* background-color: red; */
@@ -41,6 +49,7 @@ h1 span {
 }
 .box-principal {
   max-width: 50%;
+  /* background-color: red; */
 }
 .open-pokedex {
   background-color: yellow;
@@ -106,6 +115,7 @@ h1 span {
 }
 .acceso-divs {
   display: flex;
+  justify-content: space-around;
 }
 .acceso-spans {
   color: rgb(204 203 142 / var(--tw-text-opacity, 1));

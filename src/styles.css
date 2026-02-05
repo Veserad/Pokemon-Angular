@@ -18,3 +18,10 @@ app-nav-bar::after {
   width: 100vw;
   border-bottom: 1px solid rgb(74 73 33 / var(--tw-text-opacity, 1));
 }
+.cuadro-pokemon .mat-mdc-dialog-surface{
+  /* background-color: rgb(35 34 15 / var(--tw-bg-opacity, 1)) !important; */
+  background-color: rgb(74 73 33 / var(--tw-bg-opacity, 1)) !important;
+  border: 1px solid yellow !important;
+  border-radius: 0px;
+  padding: 5px !important;
+}

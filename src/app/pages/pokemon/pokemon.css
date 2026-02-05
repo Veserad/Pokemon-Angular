@@ -1,0 +1,26 @@
+.body{
+    /* background-color: rgb(35 34 15 / var(--tw-bg-opacity, 1)) !important; */
+    display: inline-block;
+    justify-content: center;
+    color: red;
+}
+.cuadro-pokemon .mat-mdc-dialog-surface{
+    display: flex;
+    justify-content: center;
+
+}
+.pokemon-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+b{
+    color: cadetblue;
+}
+p, span {
+    color: lightgreen;
+}
+h2{
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+}
